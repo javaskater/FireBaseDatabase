@@ -244,4 +244,89 @@ indice vaut :44
 ```  
 # accès aux données via curl :
 
-Il faut commencer le projet REST à [Get Started](https://firebase.google.com/docs/database/rest/start?hl=fr)
+* Il faut commencer le projet REST à [Get Started](https://firebase.google.com/docs/database/rest/start?hl=fr)
+
+## prérequis ouverture de la base en lecture à tout le monde
+
+* au niveau de la base de donnée du projet [Geolocalisation Indoor](https://geolocalisation-indoor.firebaseio.com/)
+  * menu de droite *Database* puis choisir *Realtime Database*
+  * cliquer sur *l'onglet Règles*, j'ai choisi de donner à tout le monde le droit d'accès en lecture à la base
+```javasscript
+{
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": true,
+    ".write": false
+  }
+}
+``` 
+
+## accès au données de la table des salles
+
+* récupérer toutes les Salles avec curl
+  * attention, le premier résultat est null!
+```bash
+#récupérer toutes les salles
+jpmena@jpmena-P34:~/AndroidStudioProjects/FireBaseDatabase$ curl -i https://geolocalisation-indoor.firebaseio.com/cnamacces31/salles.json 
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 May 2020 12:56:52 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 429
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+
+[null,{"_id":1,"numero_salle":"31.1.01"},{"_id":2,"numero_salle":"31.1.02"},{"_id":3,"numero_salle":"31.1.03"},{"_id":4,"numero_salle":"31.1.04"},{"_id":5,"numero_salle":"31.2.01"},{"_id":6,"numero_salle":"31.2.02"},{"_id":7,"numero_salle":"31.2.03"},{"_id":8,"numero_salle":"31.2.04"},{"_id":9,"numero_salle":"31.3.01"},{"_id":10,"numero_salle":"31.3.02"},{"_id":11,"numero_salle":"31.3.03"},{"_id":12,"numero_salle":"31.3.04"}]
+```
+* récupérer une salle particulière:
+  * exemple de la salle 2
+```bash
+jpmena@jpmena-P34:~/AndroidStudioProjects/FireBaseDatabase$ curl -i https://geolocalisation-indoor.firebaseio.com/cnamacces31/salles/2.json
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 May 2020 13:02:22 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 34
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+
+{"_id":2,"numero_salle":"31.1.02"}
+```
+
+## accès au données de la table des mouvements/parcours
+
+* récupérer tous les mouvements
+  * pas de null ici
+```bash
+jpmena@jpmena-P34:~/AndroidStudioProjects/FireBaseDatabase$ curl -i https://geolocalisation-indoor.firebaseio.com/cnamacces31/mouvements.json
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 May 2020 13:04:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 2017
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+
+[{"a":2,"de":1,"mouvement":"SUD"},.............,{"a":12,"de":8,"mouvement":"NORD+EST+MONTER+OUEST+SUD"}]
+```
+* Récupérer un seul mouvement:
+```bash
+jpmena@jpmena-P34:~/AndroidStudioProjects/FireBaseDatabase$ curl -i https://geolocalisation-indoor.firebaseio.com/cnamacces31/mouvements/1.json
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 May 2020 13:08:38 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 33
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+
+{"a":1,"de":2,"mouvement":"NORD"}
+```

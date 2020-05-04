@@ -71,11 +71,12 @@ var salles = [
 
 //tiré de https://firebase.google.com/docs/database/admin/save-data#node.js
 salles.forEach(function(obj) {
-    var usersRef = ref.child("salles");
-    usersRef.child(obj._id).set({
+    var sallesRef = ref.child("salles");
+    sallesRef.child(obj._id).set({
+      _id:obj._id,
       numero_salle: obj.numero_salle
     }).then(function(docRef) {
-          console.log("Document written with ID: ", docRef._id);
+          console.log("Document written");
       })
       .catch(function(error) {
           console.error("Error adding document: ", error);

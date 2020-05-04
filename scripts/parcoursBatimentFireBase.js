@@ -248,9 +248,9 @@ var indice = 0;
 
 //tiré de https://firebase.google.com/docs/database/admin/save-data#node.js
 parcoursElementaires.forEach(function(obj) {
-    var usersRef = ref.child("mouvements");
+    var parcoursRef = ref.child("mouvements");
     console.log("indice vaut :"+ indice);
-    usersRef.child(indice).set({
+    parcoursRef.child(indice).set({
       de: obj.de,
       a: obj.a,
       mouvement: obj.mouvement,
