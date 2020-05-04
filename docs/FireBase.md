@@ -189,3 +189,59 @@ Document written with ID:  ybHJ71JUyd0qcIoDK3Wi
 Document written with ID:  USDKVZK1EaiLf7VD7eX0
 ```
 * problème je dois faire un CTRL+C pous qu'il lâche la main !!!!
+
+# problème j'accéde au Cloud Firestoe et non à la Realtime Database:
+
+* un bon lien pour [sauver sur le FireBase Realtimee Database](https://firebase.google.com/docs/database/admin/save-data#node.js)
+
+## installation de Firebase-admin
+
+```bash
+jpmena@jpmena-P34:~/AndroidStudioProjects/FireBaseDatabase/scripts$ npm install firebase-admin --save
+npm WARN scripts@1.0.0 No description
+npm WARN scripts@1.0.0 No repository field.
+
++ firebase-admin@8.11.0
+added 159 packages from 106 contributors and audited 991 packages in 17.635s
+
+31 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+## récupérer le fichier json de configuration de l'admin Firebase
+
+* comme noté sur ce [poost StackOverflow](https://stackoverflow.com/questions/51433374/firebase-certificate-object-must-contain-a-string-private-key-property)
+* il faut aller sur la [console FireBase](https://console.firebase.google.com/u/0/)
+  * cliquer sur [mon projet](https://console.firebase.google.com/u/0/project/geolocalisation-indoor/overview)
+  * à droite de *Vue d'ensemble du projet* se trouve une rous crantée
+  * cliquer dessus et choisir dans le popup Menu *paramètres du projet*
+  * sélectionnez l'onglet *Compte de service*
+* l'écran est par défaut sur l'onglet *Sdk Admin Firebase*
+* on laise le bouton radio sur json 
+* on clique sur Générer une nouvelle clé
+  * est ce cela qui nous donne le fichier *serviceAccountKey.json* ?
+  * réponse oui l'insertion se fait bien en base malgré le message suivant:
+    * ligne 78 docRef n'est pas défini
+## l'insertion en base des salles:
+```bash
+jpmena@jpmena-P34:~/AndroidStudioProjects/FireBaseDatabase/scripts$ node sallesBatimentFireBase.js 
+Error adding document:  TypeError: Cannot read property '_id' of undefined
+    at /home/jpmena/AndroidStudioProjects/FireBaseDatabase/scripts/sallesBatimentFireBase.js:78:60
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+......................................................................
+Error adding document:  TypeError: Cannot read property '_id' of undefined
+    at /home/jpmena/AndroidStudioProjects/FireBaseDatabase/scripts/sallesBatimentFireBase.js:78:60
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+```
+# l'insertion en base des mouvements:
+```bash
+jpmena@jpmena-P34:~/AndroidStudioProjects/FireBaseDatabase/scripts$ node parcoursBatimentFireBase.js
+indice vaut :0
+indice vaut :1
+...................
+indice vaut :44
+```  
+# accès aux données via curl :
+
+Il faut commencer le projet REST à [Get Started](https://firebase.google.com/docs/database/rest/start?hl=fr)
