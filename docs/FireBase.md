@@ -332,3 +332,22 @@ Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
 ```
 
 # ajouter le niveau database
+
+* Comme indiqué [dans ce document Android](https://firebase.google.com/docs/database/rest/retrieve-data?hl=fr#shallow) avec *shalloww* 
+  * on peut n'afficher que le premier niveau
+  * pour retrouver la liste des bases de données sans charger leur contenu, on ajoute **?shallow=true** à l'url et cela devient
+```bash
+jpmena@jpmena-P34:~/AndroidStudioProjects/FireBaseDatabase$ curl -i https://geolocalisation-indoor.firebaseio.com/buildingmaps.json?shallow=true
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 06 May 2020 09:37:30 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 20
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+
+{"cnamacces31":true}
+
+```
