@@ -12,16 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/btn_salles"
-        android:text="@string/btn_salles"
-        android:onClick="fetchSalles" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_salles"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/btn_parcours"
-        android:text="@string/btn_parcours"
-        android:onClick="fetchParcours" />
+        android:id="@+id/btn_cnam31"
+        android:text="@string/btn_cnam31"
+        android:onClick="fetchSallesEtMouvements" />
 
 </RelativeLayout>

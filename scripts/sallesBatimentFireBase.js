@@ -14,7 +14,7 @@ admin.initializeApp({
 
 // Get a database reference to our blog
 var db = admin.database();
-var ref = db.ref("cnamacces31");
+var ref = db.ref("buildingmaps/cnamacces31");
 
 
 
