@@ -3,7 +3,6 @@ package fr.cnam.nfa024.jpmena.firebasedatabase.firebase;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -13,13 +12,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class BackgroundOperation extends AsyncTask<String, Void, JSONObject> {
+public class SallesAsyncTask extends AsyncTask<String, Void, JSONObject> {
 
     public static final String TAG = "AsyncFireBase";
 
     private AsyncResponse delegate;
 
-    public BackgroundOperation(AsyncResponse delegate){
+    public SallesAsyncTask(AsyncResponse delegate){
         this.delegate = delegate;
     }
 

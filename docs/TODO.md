@@ -10,4 +10,9 @@
 * je ne sais pas comment demander la liste des bases !!!
 * compléter la database SQLITE
   * le oncreate ne fait que créer les tables ...
-  * Leur remplissement doit se faire en récupérant les fichiers json ... 
+  * Leur remplissement doit se faire en récupérant les fichiers json ...
+  
+# 08/05/2020
+
+* lancer une asyncTask pour récupérer les noms des bases
+  * et générer les menus dynamiquement 

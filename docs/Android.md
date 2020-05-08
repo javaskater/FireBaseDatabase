@@ -16,3 +16,9 @@ Caused by: android.os.NetworkOnMainThreadException
   * l'appel Web ne doit pas se faire dans le UIThread
   * de là l'usage d'une AsyncTask
 * récupérer le contenu de l'AsyncTask dans l'activité cf. [réponse 18 de ce StackOverflow](https://stackoverflow.com/questions/12575068/how-to-get-the-result-of-onpostexecute-to-main-activity-because-asynctask-is-a)
+
+## créer un menu dynamique qui affiche la liste des bâtiments:
+
+* dans le onOptionsItemSelected on change juste la variable URLBASE
+* Je voudrais que la branche le menu sélectionné ait les caractères en rouge
+  * réponse 85 de cette [question StackOverflow](https://stackoverflow.com/questions/3519277/how-to-change-the-text-color-of-menu-item-in-android)
