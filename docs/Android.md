@@ -22,3 +22,4 @@ Caused by: android.os.NetworkOnMainThreadException
 * dans le onOptionsItemSelected on change juste la variable URLBASE
 * Je voudrais que la branche le menu sélectionné ait les caractères en rouge
   * réponse 85 de cette [question StackOverflow](https://stackoverflow.com/questions/3519277/how-to-change-the-text-color-of-menu-item-in-android)
+* Fait le 09/05/2020 à reporter sur le projet **GeolocalisationIndoor**

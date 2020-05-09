@@ -16,3 +16,8 @@
 
 * lancer une asyncTask pour récupérer les noms des bases
   * et générer les menus dynamiquement 
+  
+# 09/05/2020
+
+* Report du développement sélection d'un bâtiment sur le projet principal
+  * Geolocalisation Indoor

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">FireBaseDatabase</string>
     <string name="btn_cnam31">Récupérer salles et mouvements</string>
+    <string name="tv_main">Sélectionner un bâtiment via le menu</string>
 </resources>
