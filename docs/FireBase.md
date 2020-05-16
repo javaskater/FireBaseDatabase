@@ -331,7 +331,7 @@ Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
 {"a":1,"de":2,"mouvement":"NORD"}
 ```
 
-# ajouter le niveau database
+# ajouter le niveau database (bâtiment)
 
 * Comme indiqué [dans ce document Android](https://firebase.google.com/docs/database/rest/retrieve-data?hl=fr#shallow) avec *shalloww* 
   * on peut n'afficher que le premier niveau
@@ -351,3 +351,13 @@ Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
 {"cnamacces31":true}
 
 ```
+
+# 16/05/2020 on prend en compte le cas où il y a des travaux, un plan Vigiepirate un sens de circulation (COVID)
+
+* On ajoute pour chaque élément de parcours une entrée **accessible** qui vaut soit *true* (on passe) soit *false* (onn ne passe pas)
+* On peut ajouter cette même entrée pour distinguer les salles disponibles des salles condamnées (même si provisoirement)
+
+## test de la prise en compte de cette nouvelle entrée
+
+* on relance les 4 scripts Node/JS...
+* TODO: Mise à jour de la base de données (projet Geolocalisation Indoor) 

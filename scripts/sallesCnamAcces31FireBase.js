@@ -21,51 +21,63 @@ var ref = db.ref("buildingmaps/cnamacces31");
 var salles = [
     {
         "_id" : 1,
-        "numero_salle" : "31.1.01"
+        "numero_salle" : "31.1.01",
+        "accessible":true
     },
     {
         "_id" : 2,
-        "numero_salle" : "31.1.02"
+        "numero_salle" : "31.1.02",
+        "accessible":true
     },
     {
         "_id" : 3,
-        "numero_salle" : "31.1.03"
+        "numero_salle" : "31.1.03",
+        "accessible":true
     },
     {
         "_id" : 4,
-        "numero_salle" : "31.1.04"
+        "numero_salle" : "31.1.04",
+        "accessible":true
     },
     {
         "_id" : 5,
-        "numero_salle" : "31.2.01"
+        "numero_salle" : "31.2.01",
+        "accessible":true
     },
     {
         "_id" : 6,
-        "numero_salle" : "31.2.02"
+        "numero_salle" : "31.2.02",
+        "accessible":true
     },
     {
         "_id" : 7,
-        "numero_salle" : "31.2.03"
+        "numero_salle" : "31.2.03",
+        "accessible":true
     },
     {
         "_id" : 8,
-        "numero_salle" : "31.2.04"
+        "numero_salle" : "31.2.04",
+        "accessible":true
     },
     {
         "_id" : 9,
-        "numero_salle" : "31.3.01"
+        "numero_salle" : "31.3.01",
+        "accessible":true
     },
     {
         "_id" : 10,
-        "numero_salle" : "31.3.02"
+        "numero_salle" : "31.3.02",
+        "accessible":true
     },
     {
         "_id" : 11,
-        "numero_salle" : "31.3.03"
+        "numero_salle" : "31.3.03",
+        "accessible":true
     },
     {
         "_id" : 12,
-        "numero_salle" : "31.3.04"
+        "numero_salle" : "31.3.04",
+        "accessible":true
     }
 ];
 
@@ -74,7 +86,8 @@ salles.forEach(function(obj) {
     var sallesRef = ref.child("salles");
     sallesRef.child(obj._id).set({
       _id:obj._id,
-      numero_salle: obj.numero_salle
+      numero_salle: obj.numero_salle,
+      accessible: obj.accessible
     }).then(function(docRef) {
           console.log("Document written");
       })
